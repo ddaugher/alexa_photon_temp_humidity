@@ -1,23 +1,28 @@
-// This #include statement was automatically added by the Particle IDE.
 #include "DHT.h"
 
-#define DHTPIN          D4
-#define DHTTYPE         DHT22
-
-#define DELAY           5000
+#define DHTPIN D5
+#define DHTTYPE DHT11
+#define DELAY 5000
 
 DHT dht(DHTPIN, DHTTYPE);
-int temperature = 0;
-int humidity = 0;
+
+double h;    // humidity
+double tc;    // temperature c
+double tf; // temperature f
+
 
 // Returns temperature
-int getTemperature(String args){
-    return temperature;
+double getTemperaturec(String args){
+    return tc;
+}
+
+double getTemperaturef(String args){
+    return tf;
 }
 
 // Returns humidity
-int getHumidity(String args){
-    return humidity;
+double getHumidity(String args){
+    return h;
 }
 
 // Turn on/off LEDs
@@ -75,21 +80,29 @@ void setup() {
     pinMode(D6, OUTPUT);
     
     // Particle Functions
-    Spark.function("gettmp", getTemperature);
+    Spark.function("gettmpc", getTemperaturec);
+    Spark.function("gettmpf", getTemperaturef);
     Spark.function("gethmd", getHumidity);
     Spark.function("ctrlled", controlled);
+    Spark.variable("temperaturec", &tc, DOUBLE);
+    Spark.variable("temperaturef", &tf, DOUBLE);
+    Spark.variable("humidity", &h, DOUBLE);
+
 }
 
 void loop() {
     // Get temperature and humidity
-    temperature = (int)dht.readTemperature();
-    humidity = (int)dht.readHumidity();
+    h = dht.readHumidity();
+    tc = dht.readTemperature(false);
+    tf = dht.readTemperature(true);
     
     Serial.println();
-    Serial.print("Temperature: ");
-    Serial.println(temperature);
+    Serial.print("Temperature (c): ");
+    Serial.println(tc);
+    Serial.print("Temperature (f): ");
+    Serial.println(tf);
     Serial.print("Humidity: ");
-    Serial.print(humidity);
+    Serial.print(h);
     Serial.println();
     
     delay(DELAY);

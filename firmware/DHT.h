@@ -1,5 +1,4 @@
-#ifndef DHT_H
-#define DHT_H
+#include "inttypes.h"
 
 #define MAXTIMINGS 85
 
@@ -12,7 +11,6 @@
 #define AM2301 21
 
 #define NAN 999999
-
 class DHT {
     private:
         uint8_t data[6];
@@ -20,7 +18,7 @@ class DHT {
         bool read(void);
         unsigned long _lastreadtime;
         bool firstreading;
-
+    
     public:
         DHT(uint8_t pin, uint8_t type, uint8_t count=6);
         void begin(void);
@@ -29,5 +27,3 @@ class DHT {
         float readHumidity(void);
 
 };
-
-#endif // DHT_H
