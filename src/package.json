@@ -1,0 +1,29 @@
+{
+  "name": "alexa-nodekit",
+  "version": "1.0.2",
+  "description": "Amazon Echo Alexa's App Kit NodeJS Implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ddaugher/alexa_photon_temp_humidity.git"
+  },
+  "keywords": [
+    "alexa",
+    "amazon",
+    "echo"
+  ],
+  "author": "DJ Daugherty <ddaugher@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "https://github.com/ddaugher/alexa_photon_temp_humidity.git",
+  "dependencies": {},
+  "devDependencies": {
+    "should": "^6.0.1",
+    "mocha": "2.3.3"
+  }
+}

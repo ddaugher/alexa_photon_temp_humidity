@@ -9,7 +9,7 @@ var APP_ID = undefined; //replace with "amzn1.echo-sdk-ams.app.[your-unique-valu
 
 var http = require('https');
 var AlexaSkill = require('./AlexaSkill');
-
+var Particle = require('./Particle');
 /*
  *
  * Particle is a child of AlexaSkill.
@@ -62,7 +62,6 @@ Particle.prototype.intentHandlers = {
 		var pin = "";
 		var pinvalue = "";
 
-		// Replace these with action device id and access token
 		var deviceid = "2f0041000547343232363230";
 		var accessToken = "4fdc25f8220640fc08488ed6bbaa7f4d1d6c7cc1";
 
@@ -147,19 +146,23 @@ exports.handler = function (event, context) {
     particleSkill.execute(event, context);
 };
 
+#function createParticleAPIDictionary(hostname, path) {
+#	var options = {
+#		hostname: hname,
+#		port: 443,
+#		path: urlPath,
+#		method: 'POST',
+#		headers: {
+#			'Content-Type': 'application/x-www-form-urlencoded',
+#			'Accept': '*.*'
+#		}
+#	}
+#  options
+#}
+
 function makeParticleRequest(hname, urlPath, args, accessToken, callback){
 	// Particle API parameters
-	var options = {
-		hostname: hname,
-		port: 443,
-		path: urlPath,
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/x-www-form-urlencoded',
-			'Accept': '*.*'
-		}
-	}
-
+	var options = Particle.createParticleAPIDictionary(hname, urlPath)
 	var postData = "access_token=" + accessToken + "&" + "args=" + args;
 
 	console.log("Post Data: " + postData);
