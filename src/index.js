@@ -9,7 +9,7 @@ var APP_ID = undefined; //replace with "amzn1.echo-sdk-ams.app.[your-unique-valu
 
 var http = require('https');
 var AlexaSkill = require('./AlexaSkill');
-var Particle = require('./Particle');
+var ParticleFuncs = require('./Particle');
 /*
  *
  * Particle is a child of AlexaSkill.
@@ -146,23 +146,9 @@ exports.handler = function (event, context) {
     particleSkill.execute(event, context);
 };
 
-#function createParticleAPIDictionary(hostname, path) {
-#	var options = {
-#		hostname: hname,
-#		port: 443,
-#		path: urlPath,
-#		method: 'POST',
-#		headers: {
-#			'Content-Type': 'application/x-www-form-urlencoded',
-#			'Accept': '*.*'
-#		}
-#	}
-#  options
-#}
-
 function makeParticleRequest(hname, urlPath, args, accessToken, callback){
 	// Particle API parameters
-	var options = Particle.createParticleAPIDictionary(hname, urlPath)
+	var options = ParticleFuncs.createParticleAPIDictionary(hname, urlPath)
 	var postData = "access_token=" + accessToken + "&" + "args=" + args;
 
 	console.log("Post Data: " + postData);
