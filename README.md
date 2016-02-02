@@ -12,6 +12,8 @@ The firmware exposes three functions.
 *gethmd* returns humidity and 
 *ctrlled* controls the LEDS attached to D2 and D6.
 
+![Workflow](https://github.com/ddaugher/alexa_photon_temp_humidity/blob/master/screenshots/workflow.png)
+
 On the Amazon Echo side, I created an Alexa Skill Set to interact.
 
 **One-Shot Modal**
@@ -139,7 +141,6 @@ In our application we check the slots and call appropriate functions in our firm
 
 **Screenshots**
 
-![Workflow](https://github.com/ddaugher/alexa_photon_temp_humidity/blob/master/screenshots/workflow.png)
 
 curl https://api.particle.io/v1/devices/2f0041000547343232363230/gethmd -d access_token=4fdc25f8220640fc08488ed6bbaa7f4d1d6c7cc1 -d params=on
 
