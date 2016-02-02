@@ -14,6 +14,12 @@ The firmware exposes three functions.
 
 ![Workflow](https://github.com/ddaugher/alexa_photon_temp_humidity/blob/master/screenshots/workflow.png)
 
+What is Amazon Lambda
+![Lambda](https://github.com/ddaugher/alexa_photon_temp_humidity/blob/master/screenshots/AWSLambda.png)
+
+The anatomy of an Alexa Skill
+![AlexaSkill](https://github.com/ddaugher/alexa_photon_temp_humidity/blob/master/screenshots/AlexaSkill.png)
+
 On the Amazon Echo side, I created an Alexa Skill Set to interact.
 
 **One-Shot Modal**
