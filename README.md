@@ -1,11 +1,18 @@
 Particle and Amazon Echo
 ------------------------
 
-Couple of weeks back I received my Amazon Echo. First thing came to mind is to try integrating with Particle (especially after reading this post http://community.particle.io/t/alexa-open-spark-and-amazon-echo-hackathon/11318/13). Here is the project I worked.
+The Particle application is really simple, 
 
-The Particle application is really simple, just read temperature and humidity from a DHT22 sensor. Also it has two functions to control two LEDs Red and Green. The firmware exposes three functions. *gettmp* returns temperature, *gethmd* returns humidity and *ctrlled* controls the LEDS attached to D2 and D6.
+* read temperature from a DHT sensor
+* read humidity from a DHT sensor
+* two functions to control two LEDs Red and Green. 
 
-On the Amazon Echo side, we have to use Alexa Skill Set to interact with it. For this I have created one Alexa Skill Set. Following are some of the interactions possible:
+The firmware exposes three functions. 
+*gettmp* returns temperature, 
+*gethmd* returns humidity and 
+*ctrlled* controls the LEDS attached to D2 and D6.
+
+On the Amazon Echo side, I created an Alexa Skill Set to interact.
 
 **One-Shot Modal**
 User: Alexa, ask particle, what is the temperature*
@@ -131,13 +138,7 @@ In our application we check the slots and call appropriate functions in our firm
 
 **Screenshots**
 
-![Wiring](https://raw.githubusercontent.com/krvarma/Particle_Alexa/master/screenshots/image.jpg)
-
-![enter image description here](https://raw.githubusercontent.com/krvarma/Particle_Alexa/master/screenshots/fritzing.png)
-
-**Demo Video**
-
-https://www.youtube.com/watch?v=-BkBoAMksT4
+![Workflow](https://github.com/ddaugher/alexa_photon_temp_humidity/tree/master/screenshots/workflow.png)
 
 curl https://api.particle.io/v1/devices/2f0041000547343232363230/gethmd -d access_token=4fdc25f8220640fc08488ed6bbaa7f4d1d6c7cc1 -d params=on
 
