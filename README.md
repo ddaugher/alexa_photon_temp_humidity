@@ -138,7 +138,7 @@ In our application we check the slots and call appropriate functions in our firm
 
 **Screenshots**
 
-![Workflow](https://github.com/ddaugher/alexa_photon_temp_humidity/tree/master/screenshots/workflow.png)
+![Workflow](https://github.com/ddaugher/alexa_photon_temp_humidity/blob/master/screenshots/workflow.png)
 
 curl https://api.particle.io/v1/devices/2f0041000547343232363230/gethmd -d access_token=4fdc25f8220640fc08488ed6bbaa7f4d1d6c7cc1 -d params=on
 
