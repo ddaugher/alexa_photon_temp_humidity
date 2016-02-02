@@ -1,5 +1,6 @@
-ParticleIntent what is the {temperature|sensor} here
-ParticleIntent what is the {humidity|sensor} here
+ParticleIntent what is the {temperature|sensor} celsius
+ParticleIntent what is the {temperature|sensor} fahrenheit
+ParticleIntent what is the {humidity|sensor} 
 ParticleIntent turn {on|onoff} {red|light} light
 ParticleIntent turn {on|onoff} {green|light} light
 ParticleIntent turn {off|onoff} {red|light} light
