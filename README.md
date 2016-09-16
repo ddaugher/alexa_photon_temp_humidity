@@ -147,19 +147,17 @@ In our application we check the slots and call appropriate functions in our firm
 
 **Screenshots**
 
-curl https://api.spark.io/v1/devices/2f0041000547343232363230/humidity?access_token=4fdc25f8220640fc08488ed6bbaa7f4d1d6c7cc1
-'''
+curl https://api.spark.io/v1/devices/2f0041000547343232363230/gethmd -d access_token=4fdc25f8220640fc08488ed6bbaa7f4d1d6c7cc1
+```
 {
-  "cmd": "VarReturn",
-  "name": "humidity",
-  "result": 35,
-  "coreInfo": {
-    "last_app": "",
-    "last_heard": "2015-12-09T02:50:20.505Z",
-    "connected": true,
-    "last_handshake_at": "2015-12-09T02:44:25.836Z",
-    "deviceID": "2f0041000547343232363230",
-    "product_id": 6
-  }
+  "id": "2f0041000547343232363230",
+  "last_app": "",
+  "connected": true,
+  "return_value": 36
 }
-'''
+```
+
+Red Light On
+```
+curl https://api.spark.io/v1/devices/2f0041000547343232363230/ctrlled -d access_token=4fdc25f8220640fc08488ed6bbaa7f4d1d6c7cc1 -d params=D2,HIGH
+```
