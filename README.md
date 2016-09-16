@@ -147,19 +147,8 @@ In our application we check the slots and call appropriate functions in our firm
 
 **Screenshots**
 
-
-curl https://api.particle.io/v1/devices/2f0041000547343232363230/gethmd -d access_token=4fdc25f8220640fc08488ed6bbaa7f4d1d6c7cc1 -d params=on
-
-  Spark.function("gettmpc", getTemperaturec);
-    Spark.function("gettmpf", getTemperaturef);
-    Spark.function("gethmd", getHumidity);
-    Spark.function("ctrlled", controlled);
-    Spark.variable("temperaturec", &tc, DOUBLE);
-    Spark.variable("temperaturef", &tf, DOUBLE);
-    Spark.variable("humidity", &h, DOUBLE);
-
 curl https://api.spark.io/v1/devices/2f0041000547343232363230/humidity?access_token=4fdc25f8220640fc08488ed6bbaa7f4d1d6c7cc1
-{
+'''{
   "cmd": "VarReturn",
   "name": "humidity",
   "result": 35,
@@ -171,4 +160,4 @@ curl https://api.spark.io/v1/devices/2f0041000547343232363230/humidity?access_to
     "deviceID": "2f0041000547343232363230",
     "product_id": 6
   }
-}
+}'''
